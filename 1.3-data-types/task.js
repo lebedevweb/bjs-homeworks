@@ -5,7 +5,7 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 			s = Number(amount) - Number(contribution),
 			p = Number(percent) / 1200,
 			n = (date.getFullYear() - today.getFullYear()) * 12 + date.getMonth() - today.getMonth(),
-			paramName = '', paramData = '',
+			paramName = '',
 			totalAmount = '';
 
 
@@ -14,20 +14,16 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
 			totalAmount = +(payPerMonth * n).toFixed(2);
 		} else if (isNaN(percent)) {
 			paramName = '"Процентная ставка"';
-			paramData = percent;
-			totalAmount = `Параметр ${paramName} содержит неправильное значение ${paramData}`
+			totalAmount = `Параметр ${paramName} содержит неправильное значение ${percent}`
 		} else if (isNaN(contribution)) {
 			paramName = '"Начальный взнос"';
-			paramData = contribution;
-			totalAmount = `Параметр ${paramName} содержит неправильное значение ${paramData}`
+			totalAmount = `Параметр ${paramName} содержит неправильное значение ${contribution}`
 		} else if (isNaN(amount)) {
 			paramName = '"Общая стоимость"';
-			paramData = amount;
-			totalAmount = `Параметр ${paramName} содержит неправильное значение ${paramData}`
+			totalAmount = `Параметр ${paramName} содержит неправильное значение ${amount}`
 		} else if (isNaN(date)) {
 			paramName = '"Общая стоимость"';
-			paramData = date;
-			totalAmount = `Параметр ${paramName} содержит неправильное значение ${paramData}`
+			totalAmount = `Параметр ${paramName} содержит неправильное значение ${date}`
 		} else if (date < new Date()) {
 			totalAmount = 'Дата не может быть меньше текущей';
 		}
