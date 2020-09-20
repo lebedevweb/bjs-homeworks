@@ -1,20 +1,18 @@
 "use strict";
-function getResult(a,b,c){
-    let d = Math.pow(b,2) - (4 * a * c),
-        firstSquareRoot = (- b + Math.sqrt(d)) / (2 * a),
-        secondSquareRoot = (- b - Math.sqrt(d)) / (2 * a),
-        squareRoots = [];
+function getResult(a=1,b=1,c=1){
+  let d = Math.pow(b,2) - (4 * a * c),
+      firstSquareRoot = (- b + Math.sqrt(d)) / (2 * a),
+      secondSquareRoot = (- b - Math.sqrt(d)) / (2 * a),
+      squareRoots = [];
 
-    if (d < 0) {
-        return squareRoots;
-    } else if (d === 0) {
-        squareRoots.push(firstSquareRoot);
-        return squareRoots;
+    if (d === 0) {
+      squareRoots.push(firstSquareRoot);
     } else if (d > 0) {
-        squareRoots.push(firstSquareRoot);
-        squareRoots.push(secondSquareRoot);
-        return squareRoots;
+      squareRoots.push(firstSquareRoot);
+      squareRoots.push(secondSquareRoot);
     }
+
+  return squareRoots;
 }
 
 function getAverageMark(marks){
