@@ -56,7 +56,7 @@ describe('Домашнее задание к занятию 3.1 «Обработ
             expect(getTriangle(2,5,5)).toEqual(new Triangle(2,5,5));
         });
     
-        it('функция getTriangle не должна возвращать объект треугольника', () => {
+        it('функция getTriangle не должна в озвращать объект треугольника', () => {
             const triangle = getTriangle(1,3,100);
             expect(triangle.getArea()).toEqual('Ошибка! Треугольник не существует');
             expect(triangle.getPerimeter()).toEqual('Ошибка! Треугольник не существует');
